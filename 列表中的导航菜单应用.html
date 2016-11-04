@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表中的导航菜单应用</title>
+<style>
+ul, li ,a {padding:0;margin:0;text-align:center;}
+li {list-style:none;color: black;}
+a {text-decoration:none; color:black;}
+.container {width:300px; margin:50px auto;border:1px solid #ccc;}
+.container li {position:relative;width:300px;margin:0;padding:0;border-top:dashed 1px #ccc;}
+.container li.menu {line-height:60px;border-top:none;background:#F9F;}
+.container li a {width:300px;line-height:50px;}
+.container li ul {display:none;position:absolute;top:0;left:340px;}
+.hover {background:#CFF;}
+.inform {width:40px;line-height:40px;font-size:36px;position:absolute;left:300px;top:15px;display:none;}
+</style>
+
+<script src="jquery.js"></script>
+<script>
+$(function(){
+ 
+ $("ul li:not(:first-child)").each(function(){
+   $(this).mouseover(function(){
+	 $(this).children("ul").addClass("hover").show(); 
+	 $(this).children("span").show();    
+   })	
+   $(this).mouseout(function(){
+	 $(this).children("ul").removeClass("hover").hide();   
+	  $(this).children("span").hide();  
+   }) 
+ })
+ 
+ $("ul li ul").each(function(){
+   $(this).mouseover(function(){
+	 $(this).show();  
+   }).mouseout(function(){
+	  $(this).hide();   
+   })	 
+ })
+})
+
+</script>
+</head>
+
+<body>
+<ul class="container">
+<li class="menu">
+ <span>文艺范</span> 
+</li>
+<li class="optn"><a href="#">笔记本</a>
+<ul>
+ <li><a href="#">笔记本1</a></li>
+ <li><a href="#">笔记本2</a></li>
+ <li><a href="#">笔记本3</a></li>
+ <li><a href="#">笔记本4</a></li>
+ <li><a href="#">笔记本5</a></li>
+</ul>
+<span class="inform"><</span>
+</li>
+<li class="optn"><a href="#">移动硬盘</a>
+<ul>
+ <li><a href="#">移动硬盘1</a></li>
+ <li><a href="#">移动硬盘2</a></li>
+ <li><a href="#">移动硬盘3</a></li>
+ <li><a href="#">移动硬盘4</a></li>
+ <li><a href="#">移动硬盘5</a></li> 
+</ul>
+<span class="inform"><</span>
+</li>
+<li class="optn"><a href="#">数码产品</a>
+<ul>
+ <li><a href="#">数码产品1</a></li>
+ <li><a href="#">数码产品2</a></li>
+ <li><a href="#">数码产品3</a></li>
+ <li><a href="#">数码产品4</a></li>
+ <li><a href="#">数码产品5</a></li>
+</ul>
+<span class="inform"><</span>
+</li>
+<li class="optn"><a href="#">电脑软件</a>
+<ul>
+ <li><a href="#">电脑软件1</a></li>
+ <li><a href="#">电脑软件2</a></li>
+ <li><a href="#">电脑软件3</a></li>
+ <li><a href="#">电脑软件4</a></li>
+ <li><a href="#">电脑软件5</a></li>
+</ul>
+<span class="inform"><</span>
+</li>
+<li class="optn"><a href="#">内存条</a>
+<ul>
+ <li><a href="#">内存条1</a></li>
+ <li><a href="#">内存条2</a></li>
+ <li><a href="#">内存条3</a></li>
+ <li><a href="#">内存条4</a></li>
+ <li><a href="#">内存条5</a></li>
+</ul>
+<span class="inform"><</span>
+</li>
+</ul>
+</body>
+</html>
